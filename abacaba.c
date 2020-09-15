@@ -8,6 +8,7 @@ void GenerateString(int n, char* string) {
 	for (int i = 0; i <= n - 2; i++) {
 		string[now_size + 1] = letter + 1;
 		now_size += 1;
+		// можно было бы использовать готовую ф-ю strncpy
 		for (int i = 0; i < now_size; i++) {
 			string[now_size + i + 1] = string[i];
 			rise = now_size + i + 1;
@@ -21,6 +22,7 @@ void GenerateString(int n, char* string) {
 
 
 int main() {
+	// не используйте транслит
 	int col; // how many letter you will have 
 	scanf("%d", &col);
 	char string[1000];
