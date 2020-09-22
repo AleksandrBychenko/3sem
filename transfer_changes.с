@@ -1,0 +1,40 @@
+#define _CRT_SECURE_NO_WARNINGS
+#include <stdio.h>
+
+
+int size_array(int number) {
+	int size_array = 1;//the size of array 
+	int decimal = number;//10 number 
+
+	while (decimal / 2 != 0) {
+		size_array = size_array + 1;
+		decimal /= 2;
+	}
+	return size_array;
+}
+
+int*  transfer_from_decimal_to_binary(int number, int* array) {
+	
+	int size = size_array(number);
+	
+	for (int i = size - 1; i >= 0; i--) {
+		array[i] = number % 2;
+		number = number / 2;
+
+	}
+	return array;
+	
+
+	
+}
+int main()
+{
+	int const size = 1000;
+	int arrey[size];
+	int x;
+	scanf("%d", &x);
+	transfer_from_decimal_to_binary(x, arrey);
+	for (int i = 0; i < size_array(x); i++) {
+		printf("%d", arrey[i]);
+	}
+}
