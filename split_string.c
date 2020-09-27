@@ -3,9 +3,6 @@
 #include <string.h>
 #include <stdlib.h>
 
-
-
-
 size_t Split(char* input_string, char* share , char** new_strings)
 {
     char* replacement = strtok(input_string, share);
@@ -19,6 +16,7 @@ size_t Split(char* input_string, char* share , char** new_strings)
 
 int main()
 {
+// fixit: 1) создайте именованную константу для числа 100 2) у вас смешаны табы и пробелы. из-за это форматирование съехало
 	char input_string[100];
 	fgets(input_string, 100, stdin);
     int size = 1000;
